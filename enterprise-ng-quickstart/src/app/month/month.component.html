@@ -1,0 +1,46 @@
+
+<app-day-legend (startDateToCalendary)="addItem($event)"></app-day-legend>
+ <div soho-calendar
+    [events]="events"
+    [eventTypes]="eventTypes"
+    [month]="initialMonth"
+    [year]="initialYear" 
+    [showViewChanger]="showViewChanger"
+    [selectedCallback]="onCalendarDateSelectedCallback"
+    [firstDayOfWeek]="1"
+    [disable]="{dayOfWeek: [0,6]}"  
+    (selected)="onSelected($event)" 
+    (dblclick)="dblclick()" 
+  
+    (eventClick)="onEventClicked($event)"
+    (eventDblClick)="onEventDblClicked($event)" 
+     (eventContextMenu)="onCalendarEventContextMenu($event)"
+     [eventTooltip]="eventTooltip"
+     [iconTooltip]="iconTooltip"
+     [renderMonthCallback]="onRenderMonthCallback"
+     
+    
+>
+<div >
+  <soho-accordion [allowOnePane]="false">
+
+    <soho-accordion-header [isExpanded]="true">
+      <a href="#"><span data-translate="text">Legend</span></a>
+    </soho-accordion-header>
+    <soho-accordion-pane>
+      <div class="calendar-event-types accordion-content"></div>
+    </soho-accordion-pane>
+
+ 
+
+  </soho-accordion>
+</div>
+
+  <div soho-calendar-monthview>  
+     
+</div>
+  <div soho-calendar-week-view></div>
+
+</div>
+
+ 
